@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Windows.Automation;
 using System.Drawing;
 
-namespace WindowsFormsApplication1
+namespace spreadAuto
 {
 
     public class webPull : Form{
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
                         {
                             try
                             {
-                                Program.GUIref.webBrowser1.Navigate(value.Current.Value);
+                                Program.GUIref.browserViewBox.Navigate(value.Current.Value);
                             }
                             catch { }
                         });
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
 
                 Program.GUIref.Invoke((MethodInvoker)delegate
                 {
-                    Program.GUIref.textBox1.Text = element.Current.Name;
+                    Program.GUIref.autoTextBox.Text = element.Current.Name;
                 });
             }
             catch
@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                        Program.GUIref.textBox1.Text = element.Current.Name;
+                        Program.GUIref.autoTextBox.Text = element.Current.Name;
                     }
                     catch { }
                 });
@@ -78,7 +78,7 @@ namespace WindowsFormsApplication1
         {
             if (html.Contains("Duty Sheet 4"))
             {
-                Program.GUIref.textBox1.Text = "true";
+                Program.GUIref.autoTextBox.Text = "true";
             }
         }
     }

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using mshtml;
 
-namespace WindowsFormsApplication1
+namespace spreadAuto
 {
     public partial class GUI : Form
     {
@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
                 {
                     if (Program.firstLoad)
                     {
-                        Program.GUIref.webBrowser1.Navigate(
+                        Program.GUIref.browserViewBox.Navigate(
                             "javascript: " + js
                         );
                     }
@@ -87,11 +87,11 @@ namespace WindowsFormsApplication1
                     }
                     if (id == 3)
                     {
-                        Program.GUIref.webBrowser1.Navigate("http://owa.mit.edu/");
+                        Program.GUIref.browserViewBox.Navigate("http://owa.mit.edu/");
                     }
                     if (id == 4)
                     {
-                        Program.GUIref.webBrowser1.Navigate("http://www.google.com");
+                        Program.GUIref.browserViewBox.Navigate("http://www.google.com");
                     }
                     if (id == 5)
                     {
@@ -123,7 +123,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        private void browserViewBox_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             if (Program.activated)
             {
